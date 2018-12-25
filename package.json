@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^6.1.0",
+    "@angular/animations": "^6.1.10",
     "@angular/common": "^6.1.0",
     "@angular/compiler": "^6.1.0",
     "@angular/core": "^6.1.0",
@@ -23,6 +23,8 @@
     "@angular/router": "^6.1.0",
     "core-js": "^2.5.4",
     "firebase": "^5.7.1",
+    "firebaseui": "^3.5.1",
+    "firebaseui-angular": "^3.3.3",
     "primeicons": "^1.0.0",
     "primeng": "^7.0.3",
     "rxjs": "^6.0.0",
