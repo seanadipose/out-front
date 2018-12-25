@@ -18,6 +18,7 @@ import * as firebase from 'firebase/app';
 // @ts-ignore
 import * as firebaseui from 'firebaseui';
 import { SharedModule } from './shared/shared.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 const settings = environment;
 
@@ -42,6 +43,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(settings.firebase),
     AngularFireAuthModule,
     AngularFireStorageModule,
