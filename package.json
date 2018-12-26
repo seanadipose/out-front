@@ -27,7 +27,7 @@
     "firebaseui-angular": "^3.3.3",
     "primeicons": "^1.0.0",
     "primeng": "^7.0.3",
-    "rxjs": "^6.0.0",
+    "rxjs": "^6.3.3",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

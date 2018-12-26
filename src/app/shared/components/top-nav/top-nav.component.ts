@@ -1,20 +1,27 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Inject } from '@angular/core';
 import { MenuItem } from 'primeng/components/common/menuitem';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-top-nav',
   templateUrl: './top-nav.component.html',
   styleUrls: ['./top-nav.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TopNavComponent implements OnInit {
   items: MenuItem[];
-  logout() {
-    console.log('logged out')
+
+  get label() {
+    return (this.authSvc.isAuth) ? 'Logout' : 'Login';
   }
-  constructor() { }
+  logout() {
+    this.authSvc.logout();
+  }
+  constructor(
+    @Inject(AuthService) public authSvc: AuthService,
+  ) { }
 
   ngOnInit() {
+
     this.items = [
       {
         label: 'Out-front', icon: 'fa fa-fw fa-check',
@@ -43,7 +50,7 @@ export class TopNavComponent implements OnInit {
           ]
 
         ]
-      }]
+      }];
 
   }
 }

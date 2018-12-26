@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Inject } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
@@ -19,7 +19,8 @@ import * as firebase from 'firebase/app';
 import * as firebaseui from 'firebaseui';
 import { SharedModule } from './shared/shared.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { PrimengModule } from './primeng/primeng.module';
+import { AuthService } from './core/services/auth.service';
+import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
 
 const settings = environment;
 
@@ -46,6 +47,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     BrowserModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(settings.firebase),
+    AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule,
     AngularFireStorageModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
@@ -53,9 +55,17 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AdminModule,
     CoreModule,
     SharedModule,
-    PrimengModule,
+  ],
+  exports: [
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(
+    @Inject(AuthService) private authSvc: AuthService,
+  ) {
+
+  }
+ }
