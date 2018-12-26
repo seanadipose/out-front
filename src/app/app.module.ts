@@ -19,6 +19,7 @@ import * as firebase from 'firebase/app';
 import * as firebaseui from 'firebaseui';
 import { SharedModule } from './shared/shared.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { PrimengModule } from './primeng/primeng.module';
 
 const settings = environment;
 
@@ -52,6 +53,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AdminModule,
     CoreModule,
     SharedModule,
+    PrimengModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

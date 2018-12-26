@@ -20,7 +20,7 @@
     "@angular/http": "~7.1.4",
     "@angular/platform-browser": "^7.1.4",
     "@angular/platform-browser-dynamic": "^7.1.4",
-    "@angular/router": "~7.1.0",
+    "@angular/router": "~7.1.4",
     "core-js": "^2.5.4",
     "firebase": "^5.7.1",
     "firebaseui": "^3.5.1",

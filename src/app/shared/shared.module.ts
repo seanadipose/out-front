@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TopNavComponent } from './components/top-nav/top-nav.component';
-import {MegaMenuModule} from 'primeng/megamenu';
+import { PrimengModule } from '../primeng/primeng.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    MegaMenuModule,
+    PrimengModule,
   ],
   declarations: [TopNavComponent],
   exports: [TopNavComponent]
