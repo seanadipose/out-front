@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { StorageService } from '../core/services/storage.service';
 
 @Component({
   selector: 'app-admin',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  upload(evt) {
+    const files = Object.create(evt);
+    console.log(files);
+    this.storageSvc.upload(files);
+  }
+
+  constructor(
+    @Inject(StorageService) public storageSvc: StorageService
+  ) { }
 
   ngOnInit() {
   }

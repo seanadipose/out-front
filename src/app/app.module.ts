@@ -21,6 +21,8 @@ import { SharedModule } from './shared/shared.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AuthService } from './core/services/auth.service';
 import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
+import { AppRoutingModule } from './app-routing.module';
+import { AppContainerComponent } from './app-container.component';
 
 const settings = environment;
 
@@ -41,9 +43,10 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
 @NgModule({
   declarations: [
     AppComponent,
-    AdminComponent
+    AppContainerComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(settings.firebase),

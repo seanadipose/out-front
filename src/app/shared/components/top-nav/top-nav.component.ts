@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Inject } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MenuItem } from 'primeng/components/common/menuitem';
 import { AuthService } from 'src/app/core/services/auth.service';
 

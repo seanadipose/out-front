@@ -24,7 +24,7 @@ export class AuthService {
 
 
   get isAuth() {
-    return this.afAuth.auth.currentUser;
+    return (this.afAuth.auth.currentUser) ? true : false;
   }
 
   get uuid() {

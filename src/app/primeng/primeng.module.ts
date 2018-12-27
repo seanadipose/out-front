@@ -5,7 +5,7 @@ import { MegaMenuModule } from 'primeng/megamenu';
 import {CalendarModule} from 'primeng/calendar';
 import { DialogModule } from 'primeng/dialog';
 import { TableModule } from 'primeng/table';
-
+import {FileUploadModule} from 'primeng/fileupload';
 
 @NgModule({
   declarations: [],
@@ -16,6 +16,7 @@ import { TableModule } from 'primeng/table';
     CalendarModule,
     DialogModule,
     TableModule,
+    FileUploadModule,
   ],
   exports: [
     MegaMenuModule,
@@ -23,6 +24,7 @@ import { TableModule } from 'primeng/table';
     CalendarModule,
     DialogModule,
     TableModule,
+    FileUploadModule,
   ]
 })
 export class PrimengModule { }
