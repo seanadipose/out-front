@@ -8,7 +8,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { AdminModule } from './admin/admin.module';
 import { CoreModule } from './core/core.module';
-import { AdminComponent } from './admin/admin.component';
+import { PapaParseModule } from 'ngx-papaparse';
+
 // @ts-ignore
 import {FirebaseUIModule} from 'firebaseui-angular';
 // @ts-ignore
@@ -49,6 +50,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
+    PapaParseModule, 
     AngularFireModule.initializeApp(settings.firebase),
     AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule,

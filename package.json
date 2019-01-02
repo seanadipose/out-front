@@ -25,6 +25,7 @@
     "firebase": "^5.7.1",
     "firebaseui": "^3.5.1",
     "firebaseui-angular": "^3.3.3",
+    "ngx-papaparse": "^3.0.2",
     "primeicons": "^1.0.0",
     "primeng": "^7.0.3",
     "rxjs": "^6.3.3",
