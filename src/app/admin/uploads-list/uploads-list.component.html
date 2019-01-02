@@ -13,7 +13,7 @@
         <a *ngIf="i===1" [href]="data.link">{{data[col]}}</a>
         <!-- <span *ngIf="i===5">{{data[col] }}</span> -->
         <!-- <p-checkbox *ngIf="isFirst" [(ngModel)]="data[col]" binary="true"></p-checkbox> -->
-        <app-uploads-checkbox *ngIf="isFirst" [checked]="data[col]"></app-uploads-checkbox>
+        <app-uploads-checkbox *ngIf="isFirst" [checked]="data[col]" (process)="parse(data.link)"></app-uploads-checkbox>
         <button #btn *ngIf="isLast" type="button" pButton icon="pi pi-trash" label="Delete" (click)="delete($event)"></button>
 
 

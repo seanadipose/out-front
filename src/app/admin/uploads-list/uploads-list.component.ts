@@ -4,6 +4,7 @@ import { StoreService } from 'src/app/core/services/store.service';
 import { Observable } from 'rxjs';
 import { IAdserving } from 'src/app/core/interfaces/adserving';
 import { tap } from 'rxjs/operators';
+import { ParseFileService } from 'src/app/core/services/parse-file.service';
 
 const keys = ['processed', 'id', 'customer', 'module', 'delete' ];
 
@@ -24,11 +25,17 @@ export class UploadsListComponent implements OnInit {
     return `<a href="${data.link}">${data.id}</a>`;
   }
 
+  parse(link: string) {
+    console.log(link);
+    this.parseFileSvc.parse(link);
+  }
+
   delete(event: MouseEvent) {
     console.log(event);
   }
   constructor(
     @Inject(StoreService) private storeSvc: StoreService,
+    @Inject(ParseFileService) private parseFileSvc: ParseFileService,
   ) { }
 
   ngOnInit() {
