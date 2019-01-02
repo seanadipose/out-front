@@ -1,0 +1,3 @@
+<p-fileUpload mode="basic" name="myfile[]" customUpload="true" (uploadHandler)="upload($event)" accept=".csv">
+</p-fileUpload>
+<p-progressBar [value]="percentage | async" mode="determinate"></p-progressBar>

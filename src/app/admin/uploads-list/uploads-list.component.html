@@ -1,0 +1,7 @@
+<p-dataView [value]="data | async">
+    <ng-template let-data pTemplate="listItem">
+        <div>
+            {{ data.id }}
+        </div>
+    </ng-template>
+</p-dataView>

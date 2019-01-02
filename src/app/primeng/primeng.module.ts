@@ -5,7 +5,12 @@ import { MegaMenuModule } from 'primeng/megamenu';
 import {CalendarModule} from 'primeng/calendar';
 import { DialogModule } from 'primeng/dialog';
 import { TableModule } from 'primeng/table';
-import {FileUploadModule} from 'primeng/fileupload';
+import { FileUploadModule } from 'primeng/fileupload';
+import {ProgressBarModule} from 'primeng/progressbar';
+import {MessagesModule} from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
+import {DataViewModule} from 'primeng/dataview';
+
 
 @NgModule({
   declarations: [],
@@ -17,6 +22,10 @@ import {FileUploadModule} from 'primeng/fileupload';
     DialogModule,
     TableModule,
     FileUploadModule,
+    ProgressBarModule,
+    MessagesModule,
+    MessageModule,
+    DataViewModule,
   ],
   exports: [
     MegaMenuModule,
@@ -25,6 +34,11 @@ import {FileUploadModule} from 'primeng/fileupload';
     DialogModule,
     TableModule,
     FileUploadModule,
+    ProgressBarModule,
+    MessagesModule,
+    MessageModule,
+    DataViewModule,
+
   ]
 })
 export class PrimengModule { }

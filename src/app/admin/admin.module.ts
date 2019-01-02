@@ -5,13 +5,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { SharedModule } from 'primeng/components/common/shared';
+import { UploadsListComponent } from './uploads-list/uploads-list.component';
 
 @NgModule({
   imports: [
-    CommonModule,
+  CommonModule,
     AdminRoutingModule,
     PrimengModule,
+    SharedModule,
   ],
-  declarations: [AdminComponent]
+  declarations: [AdminComponent, FileUploadComponent, UploadsListComponent]
 })
 export class AdminModule { }
