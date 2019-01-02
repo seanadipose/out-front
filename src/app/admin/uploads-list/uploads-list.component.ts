@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { IAdserving } from 'src/app/core/interfaces/adserving';
 import { tap } from 'rxjs/operators';
 
-const keys = ['processed', 'id', 'customer', 'path', 'module', 'link', 'created' ];
+const keys = ['processed', 'id', 'customer', 'module', 'delete' ];
 
 @Component({
   selector: 'app-uploads-list',
@@ -19,6 +19,14 @@ export class UploadsListComponent implements OnInit {
   data: Observable<any>;
   load = true;
   cols = keys;
+
+  id(data: any) {
+    return `<a href="${data.link}">${data.id}</a>`;
+  }
+
+  delete(event: MouseEvent) {
+    console.log(event);
+  }
   constructor(
     @Inject(StoreService) private storeSvc: StoreService,
   ) { }

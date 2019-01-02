@@ -26,9 +26,11 @@ export class StoreService {
     return collection.snapshotChanges()
       .pipe(
         map((arr: DocumentChangeAction<T>[]) => arr.map(
-          (snap: DocumentChangeAction<T>) => {
+          (snap: any) => {
             const val = snap.payload.doc.data();
-            const data = { ...val, id: snap.payload.doc.id };
+            let data = {};
+            data = { ...val, id: snap.payload.doc.id } as T;
+            // data.id = snap.payload.doc.id;
             return data as T;
           }
         )));

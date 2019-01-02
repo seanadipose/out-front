@@ -1,6 +1,7 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import {ConfirmationService} from 'primeng/api';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -14,6 +15,7 @@ export class UploadsCheckboxComponent implements OnInit {
   @Output() process = new EventEmitter<boolean>();
 
   checkFormControl = new FormControl({ value: this.checked, disabled: this.checked} );
+  checkSub: Subscription;
 
   get label() {
     return (this.checked) ?  'complete' : 'process';
@@ -28,6 +30,11 @@ export class UploadsCheckboxComponent implements OnInit {
         this.checked = true;
         this.checkFormControl.disable();
         this.process.emit(true);
+        this.checkSub.unsubscribe();
+      },
+      reject: () => {
+        this.checked = false;
+        this.checkFormControl.setValue(false);
       }
   });
   }
@@ -38,9 +45,11 @@ export class UploadsCheckboxComponent implements OnInit {
 
   ngOnInit() {
     console.log(this);
-    this.checkFormControl = new FormControl(this.checked);
-    this.checkFormControl.valueChanges.subscribe(obs => this.changed(obs));
-    if (this.checked) this.checkFormControl.disable();
+    const checked = this.checked;
+    this.checkFormControl = new FormControl(checked);
+    if (checked) this.checkFormControl.disable();
+    if (!this.checked) this.checkSub = this.checkFormControl.valueChanges.subscribe(obs => this.changed(obs));
   }
+
 
 }

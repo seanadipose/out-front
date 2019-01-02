@@ -1,19 +1,24 @@
-<p-table [value]="data | async">
-    <ng-template pTemplate="header">
-        <tr>
-            <th *ngFor="let col of cols">
-                {{col}}
-            </th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-data>
-        <tr>
-            <td *ngFor="let col of cols; index as i; first as isFirst; last as isLast">
-                    <span *ngIf="!isFirst">{{data[col]}}</span>
-                    <!-- <p-checkbox *ngIf="isFirst" [(ngModel)]="data[col]" binary="true"></p-checkbox> -->
-                    <app-uploads-checkbox *ngIf="isFirst" [checked]="data[col]" ></app-uploads-checkbox>
+<p-table [value]="data | async" [resizableColumns]="true" columnResizeMode="expand">
+  <ng-template pTemplate="header">
+    <tr>
+      <th *ngFor="let col of cols">
+        {{col}}
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-data>
+    <tr>
+      <td *ngFor="let col of cols; index as i; first as isFirst; last as isLast">
+        <span *ngIf="!isFirst && (i !== 1) && (i!== 5) ">{{data[col]}}</span>
+        <a *ngIf="i===1" [href]="data.link">{{data[col]}}</a>
+        <!-- <span *ngIf="i===5">{{data[col] }}</span> -->
+        <!-- <p-checkbox *ngIf="isFirst" [(ngModel)]="data[col]" binary="true"></p-checkbox> -->
+        <app-uploads-checkbox *ngIf="isFirst" [checked]="data[col]"></app-uploads-checkbox>
+        <button #btn *ngIf="isLast" type="button" pButton icon="pi pi-trash" label="Delete" (click)="delete($event)"></button>
 
-            </td>
-        </tr>
-    </ng-template>
+
+      </td>
+
+    </tr>
+  </ng-template>
 </p-table>
