@@ -8,14 +8,17 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { SharedModule } from 'primeng/components/common/shared';
 import { UploadsListComponent } from './uploads-list/uploads-list.component';
+import { UploadsListItemComponent } from './uploads-list-item/uploads-list-item.component';
+import { UploadsCheckboxComponent } from './uploads-list/uploads-checkbox/uploads-checkbox.component';
+
 
 @NgModule({
   imports: [
-  CommonModule,
+CommonModule,
     AdminRoutingModule,
     PrimengModule,
     SharedModule,
   ],
-  declarations: [AdminComponent, FileUploadComponent, UploadsListComponent]
+  declarations: [AdminComponent, FileUploadComponent, UploadsListComponent, UploadsListItemComponent, UploadsCheckboxComponent]
 })
 export class AdminModule { }

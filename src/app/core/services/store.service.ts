@@ -27,10 +27,9 @@ export class StoreService {
       .pipe(
         map((arr: DocumentChangeAction<T>[]) => arr.map(
           (snap: DocumentChangeAction<T>) => {
-            // console.log(snap.payload.doc);
-            const data = { ...snap.payload.doc.data(), id: snap.payload.doc.id };
-            console.log(data);
-            return snap.payload.doc.data() as T;
+            const val = snap.payload.doc.data();
+            const data = { ...val, id: snap.payload.doc.id };
+            return data as T;
           }
         )));
 }

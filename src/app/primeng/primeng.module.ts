@@ -10,12 +10,18 @@ import {ProgressBarModule} from 'primeng/progressbar';
 import {MessagesModule} from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import {DataViewModule} from 'primeng/dataview';
+import {DropdownModule} from 'primeng/dropdown';
+import {CheckboxModule} from 'primeng/checkbox';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     MegaMenuModule,
     ButtonModule,
     CalendarModule,
@@ -26,8 +32,14 @@ import {DataViewModule} from 'primeng/dataview';
     MessagesModule,
     MessageModule,
     DataViewModule,
+    DropdownModule,
+    CheckboxModule,
+    ConfirmDialogModule,
+
   ],
   exports: [
+    FormsModule,
+    ReactiveFormsModule,
     MegaMenuModule,
     ButtonModule,
     CalendarModule,
@@ -38,6 +50,10 @@ import {DataViewModule} from 'primeng/dataview';
     MessagesModule,
     MessageModule,
     DataViewModule,
+    DropdownModule,
+    CheckboxModule,
+    ConfirmDialogModule,
+
 
   ]
 })
