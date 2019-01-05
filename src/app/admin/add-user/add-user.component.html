@@ -1,0 +1,36 @@
+<p-card >
+  <p-header>
+    Add a New User
+  </p-header>
+  <form [formGroup]="userform">
+    <span class="ui-float-label">
+
+      <input formControlName="firstName" id="first-name" type="text" size="30" pInputText>
+      <label for="first-name">First Name</label>
+
+    </span>
+
+    <span class="ui-float-label">
+
+      <input formControlName="lastName" id="first-name" type="text" size="30" pInputText>
+      <label for="first-name">Last Name</label>
+
+    </span>
+
+
+    <span  class="ui-float-label">
+      <input formControlName="email" id="email" type="text" pKeyFilter="email" pInputText>
+
+      <label for="email">Email</label>
+
+    </span>
+
+    <p-multiSelect formControlName="roles" [options]="roles"></p-multiSelect>
+
+  </form>
+  <p-footer>
+    <p-button label="Cancel" (onClick)="cancel()"></p-button>
+    <p-button label="Submit" type="submit" (onClick)="submit()" [disabled]="!userform.valid"></p-button>
+
+  </p-footer>
+</p-card>

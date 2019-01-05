@@ -14,6 +14,10 @@ import {DropdownModule} from 'primeng/dropdown';
 import {CheckboxModule} from 'primeng/checkbox';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {InputTextModule} from 'primeng/inputtext';
+import {InputMaskModule} from 'primeng/inputmask';
+import {CardModule} from 'primeng/card';
+import {MultiSelectModule} from 'primeng/multiselect';
 
 
 @NgModule({
@@ -35,7 +39,10 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
     DropdownModule,
     CheckboxModule,
     ConfirmDialogModule,
-
+    InputTextModule,
+    InputMaskModule,
+    CardModule,
+    MultiSelectModule,
   ],
   exports: [
     FormsModule,
@@ -53,6 +60,10 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
     DropdownModule,
     CheckboxModule,
     ConfirmDialogModule,
+    InputTextModule,
+    InputMaskModule,
+    CardModule,
+    MultiSelectModule,
 
 
   ]

@@ -24,6 +24,7 @@ import { AuthService } from './core/services/auth.service';
 import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
 import { AppRoutingModule } from './app-routing.module';
 import { AppContainerComponent } from './app-container.component';
+import {ScrollDispatchModule} from '@angular/cdk/scrolling';
 
 const settings = environment;
 
@@ -50,9 +51,10 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
+    ScrollDispatchModule,
     PapaParseModule,
     AngularFireModule.initializeApp(settings.firebase),
-    AngularFirestoreModule.enablePersistence(),
+    AngularFirestoreModule.enablePersistence({experimentalTabSynchronization : true}),
     AngularFireAuthModule,
     AngularFireStorageModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),

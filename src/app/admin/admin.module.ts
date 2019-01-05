@@ -10,6 +10,8 @@ import { SharedModule } from 'primeng/components/common/shared';
 import { UploadsListComponent } from './uploads-list/uploads-list.component';
 import { UploadsListItemComponent } from './uploads-list-item/uploads-list-item.component';
 import { UploadsCheckboxComponent } from './uploads-list/uploads-checkbox/uploads-checkbox.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ CommonModule,
     PrimengModule,
     SharedModule,
   ],
-  declarations: [AdminComponent, FileUploadComponent, UploadsListComponent, UploadsListItemComponent, UploadsCheckboxComponent]
+  declarations: [AdminComponent,
+    FileUploadComponent, UploadsListComponent,
+    UploadsListItemComponent, UploadsCheckboxComponent, AddUserComponent, UserListComponent]
 })
 export class AdminModule { }

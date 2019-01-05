@@ -8,8 +8,8 @@ const routes: Routes = [
   { path: '', component: AppContainerComponent},
   { path: 'admin', redirectTo: '/admin' },
   // {
-    // path: 'admin',
-    // loadChildren: './admin/admin.module#AdminModule'
+  //   path: 'admin',
+  //   loadChildren: './admin/admin.module#AdminModule'
   // },
 ];
 

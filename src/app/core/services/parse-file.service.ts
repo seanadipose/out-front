@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Papa } from 'ngx-papaparse';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { StoreService } from './store.service';
 
 
 // Campaign Avg. Views Before Click: 0
@@ -32,9 +34,20 @@ const enum adservingHeaders {
   date,
   interactions,
   reach,
-
 }
+// const fields = {
+//   'Campaign Avg. Views Before Click' : 'avgViewsBeforeClick',
+//   'Campaign CTR' : 'ctr',
+//   'Campaign Clicks': 'clicks',
+//   'Campaign Conversions',
+//   'Campaign Impressions',
+//   'Campaign Reach',
+//   'Date'}
 
+// const set = {
+//
+//
+// }
 
 
 @Injectable({
@@ -48,7 +61,13 @@ export class ParseFileService {
     const options = {
 
       complete: (results, file) => {
-          console.log('Parsed: ', results, file);
+        console.log('Parsed: ', results, file);
+        const data = [...results.data];
+        this.store.insertDocument(data, 'Adserving');
+        // data.forEach(arr => {
+        //   console.log(arr);
+        //   this.store.insertDocument(arr, 'Adserving');
+        // });
       },
       header: true,
       dynamicTyping: true,
@@ -61,7 +80,8 @@ export class ParseFileService {
 
   constructor(
     private papa: Papa,
-    private storage: AngularFireStorage,
+    // private store: AngularFirestore,
+    private store: StoreService
   ) {
 
   }

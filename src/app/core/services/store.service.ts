@@ -34,11 +34,24 @@ export class StoreService {
             return data as T;
           }
         )));
-}
+  }
+
+  insertDocument(document: any[], coll: string, length: number) {
+    const collection = this.db.collection(coll);
+    let ind = 1;
+    document.forEach(itm => {
+      collection.add(itm)
+      .then(res => console.log(res));
+      ind++;
+    });
+    console.log(ind);
+  }
 
 updateDocument(id: string) {
   console.log('not init');
 }
+
+
 
 constructor(
   private db: AngularFirestore,

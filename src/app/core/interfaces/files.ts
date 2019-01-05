@@ -1,4 +1,4 @@
-export type IFileTypes = 'Adserving';
+export type IFileTypes = 'Adserving' | 'User';
 
 
 export interface IFileUploads {
