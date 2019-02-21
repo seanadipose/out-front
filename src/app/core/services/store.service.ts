@@ -24,8 +24,7 @@ export class StoreService {
   getCollection<T>(module: IFileTypes): Observable<T[]> {
     const collection = this.db.collection(module);
     return collection.snapshotChanges()
-      .pipe(
-        map((arr: DocumentChangeAction<T>[]) => arr.map(
+      .pipe(map((arr: DocumentChangeAction<T>[]) => arr.map(
           (snap: any) => {
             const val = snap.payload.doc.data();
             let data = {};
@@ -36,7 +35,7 @@ export class StoreService {
         )));
   }
 
-  insertDocument(document: any[], coll: string, length: number) {
+  insertDocument(document: any[], coll: string) {
     const collection = this.db.collection(coll);
     let ind = 1;
     document.forEach(itm => {
